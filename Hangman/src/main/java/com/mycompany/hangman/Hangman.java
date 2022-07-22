@@ -16,10 +16,17 @@ public class Hangman {
     public static void main(String[] args) {
 	Scanner input = new Scanner(System.in);
 	String word;
+	int answer;
 	    
 	System.out.println("LETS PLAY HANGMAN");
 	System.out.println("Please enter a word to guess");
 	word = input.nextLine();
+
+    }
+    public int wrongCount(String word, int answer) {
+	    for(int i = 0; i < word.length(); i++) {
+		    System.out.println(word.charAt(i));
+	    }
     }
     
     public String hangman(int wrongCounter){
