@@ -5,6 +5,7 @@
 
 package com.mycompany.hangman;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -19,18 +20,29 @@ public class Hangman {
 	Scanner input = new Scanner(System.in);
 	String word;
 	int answer;
+	ArrayList<String> letter = new ArrayList<String>();
 	    
 	System.out.println("LETS PLAY HANGMAN");
 	System.out.println("Please enter a word to guess");
 	word = input.nextLine();
+	
+	for(int i = 0; i < word.length(); i++) {
+		char character = word.charAt(i);
+		
+		letter.add(Character.toString(character));
+	}
+	
+	System.out.println(letter);
 
     }
-    public int wrongCount(String word, int answer) {
-	    for(int i = 0; i < word.length(); i++) {
-		    System.out.println(word.charAt(i));
-	    }
-    }
     
+    
+//    public int wrongCount(String word, int answer) {
+//	    for(int i = 0; i < word.length(); i++) {
+//		    System.out.println(word.charAt(i));
+//	    }
+//    }
+//    
     public String hangman(int wrongCounter){
         switch(wrongCounter) {
             case 0:
